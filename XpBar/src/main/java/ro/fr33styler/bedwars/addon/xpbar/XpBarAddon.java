@@ -13,9 +13,10 @@ import ro.fr33styler.gameengine.api.game.GameManager;
 
 import java.io.File;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
-@Description(id = "XpBar", author = "Fr33styler", version = "1.0")
+@Description(id = "XpBar", author = "Fr33styler", version = "1.01")
 public class XpBarAddon extends Addon implements Configuration {
 
     private BukkitTask task;
@@ -26,12 +27,11 @@ public class XpBarAddon extends Addon implements Configuration {
     private int refreshRate = 1;
 
     @Setting("blacklist")
-    private Set<String> blacklist = new HashSet<>();
+    private Set<String> blacklist = new HashSet<>(List.of("world_name"));
 
     @Override
     public void onLoad() {
-        blacklist.add("world_name");
-        getEngine().getConfigManager().load(this, new File(getDataFolder(), "config.yml"));
+        getEngine().getConfigManager().tryLoad(this, new File(getDataFolder(), "config.yml"));
         manager = getEngine().getGameManagerRegistry().get("bedwars");
         if (manager != null) {
             Plugin plugin = getEngine().getPlugin();
