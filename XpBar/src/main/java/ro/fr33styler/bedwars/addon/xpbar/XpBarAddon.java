@@ -44,6 +44,8 @@ public class XpBarAddon extends Addon implements Configuration {
             Player player = user.toPlayer();
             if (!user.isInGame() && !blacklist.contains(player.getWorld().getName())) {
                 BedwarsStatistics statistics = (BedwarsStatistics) manager.getData(player.getUniqueId());
+                if (statistics == null) return;
+
                 float experience = statistics.getExperience();
                 float requiredExperience = statistics.getRequiredExperience();
                 player.setLevel(statistics.getLevels());

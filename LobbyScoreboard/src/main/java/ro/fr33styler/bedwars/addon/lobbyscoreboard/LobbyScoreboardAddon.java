@@ -6,9 +6,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerChangedWorldEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.event.player.*;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitTask;
 import org.bukkit.scoreboard.DisplaySlot;
@@ -143,8 +141,10 @@ public class LobbyScoreboardAddon extends Addon implements Configuration, Listen
     public void onWorldChange(PlayerChangedWorldEvent event) {
         Player player = event.getPlayer();
         if (!whitelist.contains(player.getWorld().getName())) {
-            player.setScoreboard(EMPTY_SCOREBOARD);
-            scoreboards.remove(player.getUniqueId());
+            Scoreboard scoreboard = scoreboards.remove(player.getUniqueId());
+            if (scoreboard != null && scoreboard == player.getScoreboard()) {
+                player.setScoreboard(EMPTY_SCOREBOARD);
+            }
         } else if (!scoreboards.containsKey(player.getUniqueId())) {
             setNewScoreboard(player);
         }
