@@ -24,7 +24,7 @@ import java.io.File;
 import java.util.*;
 import java.util.function.BiFunction;
 
-@Description(id = "LobbyScoreboard", author = "Fr33styler", version = "1.0")
+@Description(id = "LobbyScoreboard", author = "Fr33styler", version = "1.01")
 public class LobbyScoreboardAddon extends Addon implements Configuration, Listener {
 
     private BukkitTask task;

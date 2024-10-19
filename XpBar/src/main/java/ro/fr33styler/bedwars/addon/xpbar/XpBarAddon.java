@@ -16,7 +16,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@Description(id = "XpBar", author = "Fr33styler", version = "1.01")
+@Description(id = "XpBar", author = "Fr33styler", version = "1.02")
 public class XpBarAddon extends Addon implements Configuration {
 
     private BukkitTask task;
