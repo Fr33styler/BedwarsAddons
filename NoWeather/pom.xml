@@ -9,10 +9,10 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>LobbyScoreboard</artifactId>
+    <artifactId>NoWeather</artifactId>
 
     <build>
-        <finalName>LobbyScoreboard</finalName>
+        <finalName>NoWeather</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

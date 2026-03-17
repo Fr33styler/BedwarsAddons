@@ -14,12 +14,12 @@ import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
-import ro.fr33styler.gameengine.api.addon.Addon;
-import ro.fr33styler.gameengine.api.addon.annotation.Description;
-import ro.fr33styler.gameengine.api.config.annotation.Setting;
-import ro.fr33styler.gameengine.api.config.annotation.bounded.BoundedInteger;
-import ro.fr33styler.gameengine.api.config.serialize.Configuration;
-import ro.fr33styler.gameengine.api.game.GameManager;
+import ro.fr33styler.bedwars.api.engine.addon.Addon;
+import ro.fr33styler.bedwars.api.engine.addon.annotation.Description;
+import ro.fr33styler.bedwars.api.engine.config.annotation.Setting;
+import ro.fr33styler.bedwars.api.engine.config.annotation.bounded.BoundedInteger;
+import ro.fr33styler.bedwars.api.engine.config.serialize.Configuration;
+import ro.fr33styler.bedwars.api.engine.game.GameManager;
 
 import java.io.File;
 import java.util.*;
