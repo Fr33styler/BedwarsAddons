@@ -75,9 +75,8 @@ public class LobbyScoreboardAddon extends Addon implements Configuration, Listen
             });
         }
 
-        String[] version = Bukkit.getServer().getBukkitVersion().substring(0, Bukkit.getServer().getBukkitVersion().length() - 14).split("\\.");
+        String[] version = Bukkit.getServer().getBukkitVersion().split("\\.");
         feature = Integer.parseInt(version[0].equals("1") ? version[1] : version[0]);
-
     }
 
     @Override
