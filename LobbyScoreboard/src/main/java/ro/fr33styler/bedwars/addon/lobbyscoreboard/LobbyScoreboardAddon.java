@@ -25,7 +25,7 @@ import java.io.File;
 import java.util.*;
 import java.util.function.BiFunction;
 
-@Description(id = "LobbyScoreboard", author = "Fr33styler", version = "1.02")
+@Description(id = "LobbyScoreboard", author = "Fr33styler", version = "1.03")
 public class LobbyScoreboardAddon extends Addon implements Configuration, Listener {
 
     private int feature;
