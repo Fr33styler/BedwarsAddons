@@ -1,0 +1,30 @@
+package ro.fr33styler.bedwars.addon.revokepetonjoin;
+
+import org.bukkit.Bukkit;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import ro.fr33styler.bedwars.api.engine.addon.Addon;
+import ro.fr33styler.bedwars.api.engine.addon.annotation.Description;
+import ro.fr33styler.bedwars.api.engine.event.game.player.GameJoinEvent;
+
+@Description(id = "RevokePetOnJoin", author = "Fr33styler", version = "1.0")
+public class RevokePetOnJoin extends Addon implements Listener {
+
+    @Override
+    public void onLoad() {
+        getEngine().getAddonManager().registerListener(this);
+    }
+
+    @Override
+    public void onUnload() {
+        getEngine().getAddonManager().unregisterListener(this);
+    }
+
+    @EventHandler
+    public void onJoin(GameJoinEvent event) {
+        Bukkit.getScheduler().runTaskLater(getEngine().getPlugin(), () -> {
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pets revoke " + event.getPlayer().getName());
+        }, 20);
+    }
+
+}
