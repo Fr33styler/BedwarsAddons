@@ -19,7 +19,7 @@ import ro.fr33styler.bedwars.api.engine.game.Game;
 import java.io.File;
 import java.util.*;
 
-@Description(id = "StartMessage", author = "Fr33styler, Rafael Auler", version = "1.0")
+@Description(id = "StartMessage", author = "Fr33styler, Rafael Auler", version = "1.0.1")
 public class StartMessage extends Addon implements Configuration, Listener {
 
     @Setting("sound")
