@@ -25,7 +25,7 @@ import java.io.File;
 import java.util.*;
 import java.util.function.BiFunction;
 
-@Description(id = "LobbyScoreboard", author = "Fr33styler", version = "1.03")
+@Description(id = "LobbyScoreboard", author = "Fr33styler", version = "1.04")
 public class LobbyScoreboardAddon extends Addon implements Configuration, Listener {
 
     private int feature;
@@ -35,6 +35,9 @@ public class LobbyScoreboardAddon extends Addon implements Configuration, Listen
     @Setting("refresh-rate")
     @BoundedInteger(min = 1)
     private int refreshRate = 20;
+
+    @Setting("via-backward-support")
+    private boolean viaBackwardsSupport = false;
 
     @Setting("whitelist")
     private Set<String> whitelist = new HashSet<>(List.of("world_name"));
@@ -118,7 +121,7 @@ public class LobbyScoreboardAddon extends Addon implements Configuration, Listen
                 Team team = scoreboard.getTeam(name);
                 if (team == null) continue;
 
-                int maxAffixLength = feature > 12 ? 64 : 16;
+                int maxAffixLength = feature > 12 && !viaBackwardsSupport ? 64 : 16;
                 String text = ChatColor.translateAlternateColorCodes('&', placeholderAPI.apply(player, this.scoreboard.get(i)));
 
                 String prefix = StringUtils.substring(text, 0, maxAffixLength);
